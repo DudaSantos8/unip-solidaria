@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
 :root {
   --cor-primaria: #FF6F00;
   --cor-secundaria: #FFD166;
@@ -34,6 +36,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 2rem;
+  /* Garante que o menu hambúrguer fique visível acima de tudo */
+  z-index: 1000; 
+  position: sticky; /* Mantém a navbar no topo */
+  top: 0;
 }
 .logo {
   font-weight: bold;
@@ -44,6 +50,8 @@ body {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  /* Transição para suavizar a abertura do menu em mobile */
+  transition: transform 0.3s ease-in-out; 
 }
 .nav-links a {
   color: #fff;
@@ -52,6 +60,16 @@ body {
 }
 .nav-links a:hover {
   color: var(--cor-secundaria);
+}
+
+/* Botão de Menu (Hambúrguer) */
+.menu-toggle {
+  display: none; /* Escondido por padrão (em desktop) */
+  background: transparent;
+  border: none;
+  color: var(--cor-secundaria);
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* Hero */
@@ -96,6 +114,9 @@ body {
   border: none;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+  width: auto; 
+  display: inline-block;
+  text-decoration: none;
 }
 .btn-primary:hover {
   background: #e65c00;
@@ -113,7 +134,7 @@ h2 {
   margin-bottom: 2rem;
 }
 
-/* Galeria ONGs */
+/* Galeria ONGs (Excelente uso de Grid para responsividade) */
 .section-ongs {
   background: #fff;
 }
@@ -146,7 +167,7 @@ h2 {
   font-size: 0.95rem;
 }
 
-/* Depoimentos */
+/* Depoimentos (Excelente uso de Grid para responsividade) */
 .section-depoimentos {
   background: var(--cor-claro);
 }
@@ -165,12 +186,16 @@ blockquote {
 }
 
 /* Doação */
+.section-doacao {
+  text-align: center; 
+}
 .section-doacao input[type="number"] {
-  padding: 0.6rem;
+  padding: 0.8rem;
   border-radius: 6px;
   border: 1px solid #ccc;
   margin: 0.5rem 0 1rem;
-  width: 200px;
+  width: 250px; 
+  max-width: 90%; 
 }
 .info-pagamento {
   margin-top: 1rem;
@@ -186,6 +211,9 @@ blockquote {
   border: 1px solid #ddd;
   border-radius: 6px;
   text-align: left;
+  max-width: 700px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 .section-faq summary {
   cursor: pointer;
@@ -207,4 +235,90 @@ blockquote {
 a:focus, button:focus {
   outline: 3px dashed var(--cor-apoio);
   outline-offset: 2px;
+}
+
+/* ================================================= */
+/* MEDIA QUERY: RESPONSIVIDADE PARA TELAS PEQUENAS (Mobile <= 768px) */
+/* ================================================= */
+
+@media (max-width: 768px) {
+  /* Tamanho de Fonte e Títulos */
+  body {
+    font-size: 15px;
+  }
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .section {
+    padding: 2.5rem 0.5rem;
+  }
+
+  /* Navbar (Menu Hambúrguer) */
+  .menu-toggle {
+    display: block; /* Mostra o botão em telas pequenas */
+  }
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  .nav-links {
+    position: absolute;
+    top: 55px; /* Ajusta à altura da navbar */
+    left: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: column; 
+    background: var(--cor-texto);
+    padding: 1rem 0;
+    transform: translateX(-100%); /* Esconde fora da tela */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    /* Garante que o menu sobreponha o conteúdo */
+    z-index: 999; 
+  }
+
+  /* Estado ativo/aberto do menu */
+  .nav-links.active {
+    transform: translateX(0); /* Exibe o menu */
+  }
+  
+  .nav-links li {
+    text-align: center;
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  /* Hero */
+  .hero {
+    height: 60vh; 
+  }
+  .hero-content {
+    text-align: center; 
+  }
+
+  /* Doação - Deixa o formulário em coluna */
+  .section-doacao form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-doacao input[type="number"] {
+    width: 90%;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .btn-primary {
+    width: 90%; 
+  }
 }
