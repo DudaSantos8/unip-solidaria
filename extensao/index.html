@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto UNIP Solidária</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">UNIP Solidária</div>
+    <ul class="nav-links">
+      <li><a href="#topo">Início</a></li>
+      <li><a href="#ongs">ONGs</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#doacao">Doações</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header id="topo" class="hero" style="background-image: url('imagens/hero.jpg');">
+    <div class="overlay">
+      <div class="container hero-content">
+        <h1>Doe Esperança. Doe Amor.</h1>
+        <p>Mais de <span id="contador-doacoes">5.320</span> doações já realizadas!</p>
+        <p>Junte-se ao Projeto de Extensão da UNIP e ajude a transformar vidas.</p>
+        <a href="#doacao" class="btn-primary">Quero Doar Agora</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Galeria das ONGs -->
+  <section id="ongs" class="section section-ongs">
+    <div class="container">
+      <h2>Conheça as ONGs Parceiras</h2>
+      <div class="ongs-grid">
+        <div class="ong-card">
+          <img src="imagens/ong.avif" alt="Distribuição de alimentos pela ONG Esperança">
+          <h3>ONG Esperança</h3>
+          <p>Fornece cestas básicas e refeições quentes para famílias carentes.</p>
+        </div>
+        <div class="ong-card">
+          <img src="imagens/ong2.jpg" alt="Voluntários entregando roupas">
+          <h3>ONG Abraço Solidário</h3>
+          <p>Oferece roupas, apoio emocional e cursos de capacitação.</p>
+        </div>
+        <div class="ong-card">
+          <img src="imagens/ong3.jpg" alt="Ação de voluntários em comunidade">
+          <h3>Projeto Comunidade Viva</h3>
+          <p>Organiza mutirões para melhorar moradias e espaços comunitários.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos" class="section section-depoimentos">
+    <div class="container">
+      <h2>Histórias que Inspiram</h2>
+      <div class="depoimentos-grid">
+        <blockquote>
+          <p>"Poder ajudar me torna uma pessoa mais feliz."</p>
+          <cite>— Cesar, doador</cite>
+        </blockquote>
+        <blockquote>
+          <p>"Recebemos cestas básicas no momento que mais precisávamos. Sou muito grata!"</p>
+          <cite>— Geise, beneficiária</cite>
+        </blockquote>
+        <blockquote>
+          <p>"Conseguimos um lugar melhor para morar, muito obrigada!"</p>
+          <cite>— Kátia, beneficiária</cite>
+        </blockquote>
+        <blockquote>
+          <p>"Participar como voluntário me fez perceber a força da solidariedade."</p>
+          <cite>— João, estudante UNIP</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doação -->
+  <section id="doacao" class="section section-doacao">
+    <div class="container">
+      <h2>Faça sua Doação</h2>
+      <p>Sua doação ajuda diretamente famílias e comunidades em situação de vulnerabilidade.</p>
+      <form id="doacao-form">
+        <label for="valor">Valor da doação (R$):</label>
+        <input type="number" id="valor" name="valor" min="5" required placeholder="Ex: 50">
+        <button type="submit" class="btn-primary">Doar Agora</button>
+      </form>
+      <p class="info-pagamento">Aceitamos Pix, cartão de crédito e boleto.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section-faq">
+    <div class="container">
+      <h2>Perguntas Frequentes</h2>
+      <details>
+        <summary>Como posso ter certeza de que minha doação chegou?</summary>
+        <p>Você recebe um e-mail de confirmação com os dados do repasse às ONGs.</p>
+      </details>
+      <details>
+        <summary>Posso doar itens físicos?</summary>
+        <p>Sim, entre em contato pelo e-mail <a href="mailto:contato@unipsolidaria.org">contato@unipsolidaria.org</a>.</p>
+      </details>
+      <details>
+        <summary>As doações têm desconto no Imposto de Renda?</summary>
+        <p>Sim, emitimos recibos para fins de dedução fiscal quando aplicável.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2025 UNIP Solidária – Projeto de Extensão Acadêmica</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
