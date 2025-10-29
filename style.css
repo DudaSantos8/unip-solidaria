@@ -1,210 +1,711 @@
+/*
+=====================================================
+    0. VARIÁVEIS, RESET E TIPOGRAFIA
+=====================================================
+*/
 :root {
-  --cor-primaria: #FF6F00;
-  --cor-secundaria: #FFD166;
-  --cor-texto: #002B36;
-  --cor-apoio: #00B4D8;
-  --cor-claro: #F8FAFC;
-  --cor-sucesso: #28a745;
-  --cor-erro: #dc3545;
+    /* Cores */
+    --cor-principal-unip: #004d9c; /* Azul escuro UNIP (Confiança) */
+    --cor-secundaria-acao: #28a745; /* Verde para Ação/Sucesso */
+    --cor-fundo-claro: #f4f7f6; /* Fundo Leve */
+    --cor-fundo-escuro: #003366; /* Azul Escuro Fundo */
+    --cor-texto-principal: #333;
+    --cor-texto-claro: #fff;
+    --cor-destaque: #ffc107; /* Amarelo/Laranja para Destaque/CTA */
+    --cor-sombra-leve: rgba(0, 0, 0, 0.1);
+
+    /* Espaçamento */
+    --espacamento-secao: 80px;
+
+    /* Transição */
+    --transicao-padrao: 0.3s ease-in-out;
 }
 
-/* Reset básico */
+/* Reset Básico */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: var(--cor-claro);
-  color: var(--cor-texto);
-  line-height: 1.6;
+    font-family: 'Open Sans', Arial, sans-serif; 
+    line-height: 1.6;
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo-claro);
+    scroll-behavior: smooth; /* Rolagem suave ao clicar em âncoras */
 }
+
+/* NOVO: Impede a rolagem do fundo quando o menu mobile está aberto */
+body.menu-open {
+    overflow: hidden; 
+}
+
+/* Container centraliza o conteúdo */
 .container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Navbar */
-.navbar {
-  background: var(--cor-texto);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 2rem;
-}
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: var(--cor-secundaria);
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.nav-links a:hover {
-  color: var(--cor-secundaria);
+/* Estilo para links */
+a {
+    color: var(--cor-secundaria-acao);
+    text-decoration: none;
+    transition: color var(--transicao-padrao);
 }
 
-/* Hero */
-.hero {
-  position: relative;
-  height: 80vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  color: #fff;
-}
-.overlay {
-  background: rgba(0,0,0,0.5);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.hero-content {
-  text-align: left;
-}
-.hero h1 {
-  font-size: 3rem;
-  color: var(--cor-secundaria);
-  text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+a:hover {
+    color: var(--cor-principal-unip);
 }
 
-/* Botões */
+/* Estilo de Botão Primário (Chamada para Ação) */
 .btn-primary {
-  background: var(--cor-primaria);
-  color: #fff;
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--cor-secundaria-acao);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
+    box-shadow: 0 4px 10px var(--cor-sombra-leve);
+    text-align: center;
 }
+
 .btn-primary:hover {
-  background: #e65c00;
-  transform: scale(1.05);
+    background-color: #1e7e34; 
+    transform: translateY(-2px); 
 }
 
-/* Seções */
+/* Estilo de Botão Secundário (para Voluntariado/Parceria) */
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-principal-unip);
+    border: 2px solid var(--cor-principal-unip); 
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-right: 10px; 
+    transition: background-color var(--transicao-padrao), color var(--transicao-padrao);
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background-color: var(--cor-principal-unip);
+    color: var(--cor-texto-claro);
+}
+
+/* Estilo de Seções Padrão */
 .section {
-  padding: 3rem 1rem;
-  text-align: center;
-}
-h2 {
-  color: var(--cor-primaria);
-  font-size: 2rem;
-  margin-bottom: 2rem;
+    padding: var(--espacamento-secao) 0;
 }
 
-/* Galeria ONGs */
+.section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--cor-principal-unip);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--cor-destaque);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+
+/*
+=====================================================
+    1. CABEÇALHO (HEADER) E NAVEGAÇÃO
+=====================================================
+*/
+header {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--cor-fundo-escuro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--cor-sombra-leve);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-destaque);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--cor-secundaria-acao);
+    transition: width var(--transicao-padrao);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Destaque do Link CTA no Menu Desktop */
+.nav-links .nav-cta a {
+    background-color: var(--cor-secundaria-acao);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links .nav-cta a:hover {
+    background-color: #1e7e34;
+}
+
+.nav-links .nav-cta a::after {
+    display: none; 
+}
+
+/* -------------------- ESTILOS DO MENU HAMBÚRGUER (MOBILE) -------------------- */
+.menu-toggle {
+    display: none; /* Escondido por padrão no desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; 
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--cor-texto-claro);
+    border-radius: 3px;
+    transition: all 0.3s linear;
+    transform-origin: 1px;
+}
+
+
+/*
+=====================================================
+    2. SEÇÃO DE DESTAQUE (HERO)
+=====================================================
+*/
+.hero {
+    height: 80vh; 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    color: var(--cor-texto-claro);
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+#contador-doacoes {
+    color: var(--cor-destaque);
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+/*
+=====================================================
+    3. SEÇÕES DE CONTEÚDO (MAIN)
+=====================================================
+*/
+
+/* --- SOBRE (Missão, Visão, Valores) --- */
+.section-sobre p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.missao-visao-valores {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.missao-visao-valores article {
+    flex: 1;
+    padding: 30px 20px;
+    background-color: var(--cor-texto-claro);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--cor-sombra-leve);
+    transition: transform var(--transicao-padrao);
+}
+
+.missao-visao-valores article:hover {
+    transform: translateY(-5px);
+}
+
+.missao-visao-valores h3 {
+    color: var(--cor-principal-unip);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.missao-visao-valores ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* --- PROJETOS/AÇÕES (ONGs) --- */
 .section-ongs {
-  background: #fff;
+    background-color: var(--cor-fundo-claro);
 }
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
 .ongs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
+
 .ong-card {
-  background: var(--cor-claro);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+    background-color: var(--cor-texto-claro);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--cor-sombra-leve);
+    text-align: center;
+    transition: box-shadow var(--transicao-padrao);
 }
+
 .ong-card:hover {
-  transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Link que envolve Imagem e Título */
+.ong-card .card-link {
+    display: block; 
+    color: inherit; 
+    text-decoration: none; 
+}
+
+.ong-card .card-link:hover h3 {
+    text-decoration: underline; 
+    color: var(--cor-secundaria-acao); 
+}
+
 .ong-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 4px solid var(--cor-secundaria-acao);
 }
+
 .ong-card h3 {
-  color: var(--cor-primaria);
-  margin: 1rem;
+    color: var(--cor-principal-unip);
+    margin: 15px 0;
+    font-size: 1.4rem;
 }
+
 .ong-card p {
-  margin: 0 1rem 1rem;
-  font-size: 0.95rem;
+    padding: 0 20px 20px;
 }
 
-/* Depoimentos */
-.section-depoimentos {
-  background: var(--cor-claro);
-}
-.depoimentos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 1.5rem;
-}
-blockquote {
-  background: #fff;
-  padding: 1rem;
-  border-left: 5px solid var(--cor-apoio);
-  font-style: italic;
-  border-radius: 6px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+.ong-card p a {
+    font-weight: bold;
+    font-size: 0.95rem;
 }
 
-/* Doação */
-.section-doacao input[type="number"] {
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin: 0.5rem 0 1rem;
-  width: 200px;
+/* --- IMPACTO AMBIENTAL --- */
+.section-impacto {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    text-align: center;
 }
+
+.section-impacto h2 {
+    color: var(--cor-texto-claro);
+}
+
+.impacto-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.impacto-grid article {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    transition: background-color var(--transicao-padrao);
+}
+
+.impacto-grid article:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.impacto-grid h3 {
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+.impacto-grid p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* --- GALERIA --- */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px var(--cor-sombra-leve);
+    transition: transform 0.5s ease;
+    cursor: zoom-in;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.03); 
+}
+
+/* --- COMO AJUDAR (DOAÇÃO / VOLUNTARIADO) --- */
+.section-doacao {
+    text-align: center;
+    background-color: var(--cor-fundo-claro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-doacao .container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.apoio-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    padding: 30px;
+    background: var(--cor-texto-claro);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--cor-sombra-leve);
+    text-align: center;
+}
+
+.apoio-card h3 {
+    color: var(--cor-principal-unip);
+    margin-bottom: 15px;
+}
+
+.apoio-card p {
+    margin-bottom: 20px;
+}
+
+#doacao-form {
+    padding: 0; 
+    box-shadow: none; 
+    background: none;
+    margin: 20px auto 0;
+}
+
+/* --- CONTATO --- */
+.section-contato {
+    text-align: center;
+    background-color: var(--cor-texto-claro);
+}
+
+.contato-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    background: var(--cor-fundo-claro); 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--cor-sombra-leve);
+}
+
+label, input, textarea, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="number"], input[type="text"], input[type="email"], textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
 .info-pagamento {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: var(--cor-texto);
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
 }
 
-/* FAQ */
-.section-faq details {
-  background: #fff;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  text-align: left;
-}
-.section-faq summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--cor-primaria);
+.redes-sociais {
+    margin-top: 20px;
+    font-size: 1.1rem;
 }
 
-/* Footer */
+.redes-sociais a {
+    color: var(--cor-principal-unip);
+    margin: 0 10px;
+}
+
+/*
+=====================================================
+    4. RODAPÉ (FOOTER)
+=====================================================
+*/
 .footer {
-  background: var(--cor-texto);
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
+    background-color: var(--cor-principal-unip);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
 }
 
-/* Acessibilidade */
-a:focus, button:focus {
-  outline: 3px dashed var(--cor-apoio);
-  outline-offset: 2px;
+.footer .container p {
+    margin-bottom: 5px;
+}
+
+/*
+=====================================================
+    5. RESPONSIVIDADE (MEDIA QUERIES)
+=====================================================
+*/
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+    .nav-links li {
+        margin-left: 15px;
+    }
+
+    .hero {
+        height: 65vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+        line-height: 1.2; /* Garante quebra de linha suave */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .missao-visao-valores, .impacto-grid {
+        flex-direction: column; 
+        gap: 30px;
+    }
+    
+    .missao-visao-valores article {
+        text-align: left;
+    }
+    
+    .section-doacao .container {
+        flex-direction: column;
+    }
+
+    .apoio-card {
+        max-width: 100%;
+    }
+}
+
+/* Celular (max-width: 600px) */
+@media (max-width: 600px) {
+    /* 1. Exibe o botão Hambúrguer */
+    .menu-toggle {
+        display: flex; 
+    }
+    
+    /* 2. Configuração do Menu Mobile Lateral/Vertical */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: var(--cor-fundo-escuro);
+        
+        /* Estado inicial: escondido à direita */
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* 3. Estilo dos itens no menu mobile */
+    .nav-links li {
+        margin: 20px 0;
+        opacity: 0; 
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .nav-links a {
+        font-size: 1.5rem;
+        padding: 10px 0;
+        color: var(--cor-texto-claro);
+    }
+    
+    /* 4. Estado Ativo: Menu Aberto (Classe adicionada pelo JS) */
+    .nav-links.active {
+        transform: translateX(0); /* Traz o menu para a tela */
+    }
+    
+    .nav-links.active li {
+        opacity: 1; /* Mostra os links */
+    }
+    
+    /* 5. Animação do ícone X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0; 
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    /* Outros ajustes de responsividade (corrigido o h1) */
+    .navbar {
+        flex-direction: row; 
+        padding: 15px 10px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Reduzido para caber a frase completa */
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+    
+    .btn-primary {
+        width: 100%; 
+    }
+
+    .impacto-grid article h3 {
+        font-size: 2.5rem;
+    }
+    
+    .galeria-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .btn-secondary {
+        margin-right: 0;
+        margin-bottom: 10px;
+        display: block;
+        width: 100%;
+    }
 }

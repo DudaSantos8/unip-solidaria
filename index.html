@@ -1,123 +1,215 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projeto UNIP Solidária</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIP Solidária: Transformando Vidas e o Meio Ambiente</title>
+    <meta name="description" content="Projeto de Extensão da UNIP focado em ações sociais e ambientais. Conheça nossos projetos, veja nosso impacto e saiba como ajudar.">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">UNIP Solidária</div>
-    <ul class="nav-links">
-      <li><a href="#topo">Início</a></li>
-      <li><a href="#ongs">ONGs</a></li>
-      <li><a href="#depoimentos">Depoimentos</a></li>
-      <li><a href="#doacao">Doações</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-  </nav>
+    <header>
+        <nav class="navbar" aria-label="Menu Principal de Navegação">
+            <a href="#topo" class="logo" aria-label="Ir para o topo da página">UNIP Solidária</a>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#topo">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#projetos">Nossos Projetos</a></li>
+                <li><a href="#impacto">Impacto Ambiental</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#como-ajudar" class="cta-link nav-cta">Como Ajudar</a></li> 
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
 
-  <!-- Hero -->
-  <header id="topo" class="hero" style="background-image: url('imagens/hero.jpg');">
-    <div class="overlay">
-      <div class="container hero-content">
-        <h1>Doe Esperança. Doe Amor.</h1>
-        <p>Mais de <span id="contador-doacoes">5.320</span> doações já realizadas!</p>
-        <p>Junte-se ao Projeto de Extensão da UNIP e ajude a transformar vidas.</p>
-        <a href="#doacao" class="btn-primary">Quero Doar Agora</a>
-      </div>
-    </div>
-  </header>
+        <section id="topo" class="hero" style="background-image: url('imagens/hero.jpg');" aria-labelledby="main-headline">
+            <div class="overlay">
+                <div class="container hero-content">
+                    <h1 id="main-headline">Doe Esperança. Doe Amor. Salve o Planeta.</h1>
+                    
+                    <p>Mais de <span id="contador-doacoes" aria-live="polite">5.320</span> doações já realizadas!</p>
+                    
+                    <p>Junte-se ao Projeto de Extensão da UNIP e ajude a transformar vidas e a preservar o meio ambiente.</p>
+                    
+                    <a href="#como-ajudar" class="btn-primary">Quero Ajudar Agora</a>
+                </div>
+            </div>
+        </section>
+    </header>
 
-  <!-- Galeria das ONGs -->
-  <section id="ongs" class="section section-ongs">
-    <div class="container">
-      <h2>Conheça as ONGs Parceiras</h2>
-      <div class="ongs-grid">
-        <div class="ong-card">
-          <img src="imagens/ong.avif" alt="Distribuição de alimentos pela ONG Esperança">
-          <h3>ONG Esperança</h3>
-          <p>Fornece cestas básicas e refeições quentes para famílias carentes.</p>
+    <main>
+        <section id="sobre" class="section section-sobre" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <h2 id="sobre-titulo">Sobre a UNIP Solidária</h2>
+                <p>A <strong>UNIP Solidária</strong> é um projeto de extensão acadêmica que conecta estudantes, professores e a comunidade em ações sociais e ambientais. Buscamos promover solidariedade, sustentabilidade e cidadania por meio de projetos reais que impactam positivamente o mundo.</p>
+                
+                <div class="missao-visao-valores">
+                    <article>
+                        <h3>Missão</h3>
+                        <p>Transformar realidades por meio da empatia, do conhecimento e da ação solidária, com foco na sustentabilidade e preservação ambiental.</p>
+                    </article>
+                    <article>
+                        <h3>Visão</h3>
+                        <p>Ser referência em iniciativas acadêmicas que unem aprendizado e impacto social e ambiental em larga escala.</p>
+                    </article>
+                    <article>
+                        <h3>Valores</h3>
+                        <ul>
+                            <li>Respeito ao próximo e ao meio ambiente</li>
+                            <li>Transparência e responsabilidade</li>
+                            <li>Cooperação e inclusão</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="section section-ongs" aria-labelledby="projetos-titulo">
+            <div class="container">
+                <h2 id="projetos-titulo">Nossos Projetos e Ações</h2>
+                <p class="section-subtitle">Conheça algumas das iniciativas que a UNIP Solidária apoia, com foco no impacto social e ambiental.</p>
+
+                <div class="ongs-grid">
+                    
+                    <article class="ong-card" aria-label="Projeto de Reflorestamento Urbano">
+                        <a href="https://iniciativaverde.org.br/" target="_blank" rel="noopener noreferrer" class="card-link"> 
+                            <img src="imagens/reflorestamento.webp" alt="Voluntários plantando mudas de árvores em área urbana">
+                            <h3>Reflorestamento Urbano</h3>
+                        </a>
+                        <p>Ações de plantio de espécies nativas em áreas degradadas e praças, aumentando o verde e a biodiversidade local.</p>
+                        <p><a href="https://iniciativaverde.org.br/" target="_blank" rel="noopener noreferrer">Saiba mais sobre este projeto →</a></p>
+                    </article>
+
+                    <article class="ong-card" aria-label="Projeto de Gestão de Resíduos">
+                        <a href="https://www.viralata.org.br/" target="_blank" rel="noopener noreferrer" class="card-link"> 
+                            <img src="imagens/coletaLixo.jpg" alt="Oficina de reciclagem com materiais reaproveitados">
+                            <h3>Gestão de Resíduos e Reciclagem</h3>
+                        </a>
+                        <p>Oficinas de conscientização e mutirões para coleta seletiva e destinação correta de resíduos sólidos.</p>
+                        <p><a href="https://www.viralata.org.br/" target="_blank" rel="noopener noreferrer">Saiba mais sobre este projeto →</a></p>
+                    </article>
+
+                    <article class="ong-card" aria-label="Projeto de Apoio Comunitário">
+                        <a href="https://ongmais.com.br/" target="_blank" rel="noopener noreferrer" class="card-link"> 
+                            <img src="imagens/doacao.jpg" alt="Distribuição de alimentos e cestas básicas para a comunidade">
+                            <h3>Combate à Fome e Solidariedade</h3>
+                        </a>
+                        <p>Campanhas de arrecadação e distribuição de alimentos e materiais essenciais para famílias em situação de vulnerabilidade.</p>
+                        <p><a href="https://ongmais.com.br/" target="_blank" rel="noopener noreferrer">Saiba mais sobre este projeto →</a></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="section section-impacto" aria-labelledby="impacto-titulo">
+            <div class="container">
+                <h2 id="impacto-titulo">Nosso Impacto em Números</h2>
+                
+                <div class="impacto-grid">
+                    <article aria-label="Mais de 15 mil árvores plantadas">
+                        <h3>+15.000</h3>
+                        <p>Árvores plantadas em áreas urbanas e rurais</p>
+                    </article>
+                    <article aria-label="120 toneladas de resíduos reciclados">
+                        <h3>120</h3>
+                        <p>Toneladas de resíduos reciclados</p>
+                    </article>
+                    <article aria-label="Mais de 8 mil e 500 famílias beneficiadas">
+                        <h3>8.500</h3>
+                        <p>Famílias beneficiadas diretamente pelos projetos</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="section section-galeria" aria-labelledby="galeria-titulo">
+            <div class="container">
+                <h2 id="galeria-titulo">Galeria de Ações e Campanhas</h2>
+                <div class="galeria-grid">
+                    <figure>
+                        <img src="imagens/multirao.webp" alt="Voluntários participando de mutirão de limpeza em uma floresta">
+                        <figcaption class="sr-only">Mutirão de limpeza ambiental</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imagens/plantio.jpg" alt="Foto de close-up de uma muda de árvore sendo plantada na terra">
+                        <figcaption class="sr-only">Plantio de árvores</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imagens/reciclagem.jpg" alt="Oficina de reciclagem com jovens usando garrafas plásticas">
+                        <figcaption class="sr-only">Oficina de reciclagem criativa</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imagens/doacaoRoupa.jpg" alt="Voluntários entregando sacolas de doação de roupas para uma senhora">
+                        <figcaption class="sr-only">Doação de roupas e itens essenciais</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-ajudar" class="section section-doacao" aria-labelledby="ajudar-titulo">
+            <div class="container">
+                <h2 id="ajudar-titulo">Como Você Pode Ajudar</h2>
+                <p>Você pode contribuir com doações financeiras, materiais ou com o seu tempo como voluntário. **Toda ajuda faz a diferença!**</p>
+
+                <article class="apoio-card">
+                    <h3>Doação Financeira</h3>
+                    <p>Use o formulário abaixo para fazer uma contribuição única e segura.</p>
+                    <form id="doacao-form" aria-label="Formulário para Doação Rápida">
+                        <label for="valor">Valor da doação (R$):</label>
+                        <input type="number" id="valor" name="valor" min="5" required placeholder="Ex: 50,00" aria-required="true">
+                        <button type="submit" class="btn-primary">Doar Agora</button>
+                    </form>
+                    <p class="info-pagamento">Aceitamos Pix, cartão de crédito e boleto. Processamento seguro.</p>
+                </article>
+
+                <article class="apoio-card">
+                    <h3>Voluntariado e Parcerias</h3>
+                    <p>Tem tempo ou recursos para compartilhar? Queremos você na nossa equipe!</p>
+                    <a href="#contato" class="btn-secondary">Torne-se Voluntário</a>
+                    <a href="#contato" class="btn-secondary">Propor Parceria</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" class="section section-contato" aria-labelledby="contato-titulo">
+            <div class="container">
+                <h2 id="contato-titulo">Entre em Contato</h2>
+                <form class="contato-form" aria-label="Formulário de Contato">
+                    <input type="text" placeholder="Seu nome" required aria-label="Seu nome completo">
+                    <input type="email" placeholder="Seu e-mail" required aria-label="Seu e-mail de contato">
+                    <textarea placeholder="Sua mensagem ou proposta (Voluntariado/Parceria)" rows="4" required aria-label="Sua mensagem"></textarea>
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                </form>
+                
+                <p>Siga nossas redes sociais e fique por dentro das ações:</p>
+                <div class="redes-sociais" role="contentinfo">
+                    <a href="#" aria-label="Link para o Instagram da UNIP Solidária">Instagram</a> | 
+                    <a href="#" aria-label="Link para o Facebook da UNIP Solidária">Facebook</a> | 
+                    <a href="#" aria-label="Link para o LinkedIn da UNIP Solidária">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 UNIP Solidária – Projeto de Extensão Acadêmica. Todos os direitos reservados.</p>
+            <p>CNPJ: 00.000.000/0001-00 | Endereço: Av. Exemplo, 1234 - São Paulo/SP</p>
+            <small>Desenvolvido com o objetivo de promover a sustentabilidade e a cidadania.</small>
         </div>
-        <div class="ong-card">
-          <img src="imagens/ong2.jpg" alt="Voluntários entregando roupas">
-          <h3>ONG Abraço Solidário</h3>
-          <p>Oferece roupas, apoio emocional e cursos de capacitação.</p>
-        </div>
-        <div class="ong-card">
-          <img src="imagens/ong3.jpg" alt="Ação de voluntários em comunidade">
-          <h3>Projeto Comunidade Viva</h3>
-          <p>Organiza mutirões para melhorar moradias e espaços comunitários.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Depoimentos -->
-  <section id="depoimentos" class="section section-depoimentos">
-    <div class="container">
-      <h2>Histórias que Inspiram</h2>
-      <div class="depoimentos-grid">
-        <blockquote>
-          <p>"Poder ajudar me torna uma pessoa mais feliz."</p>
-          <cite>— Cesar, doador</cite>
-        </blockquote>
-        <blockquote>
-          <p>"Recebemos cestas básicas no momento que mais precisávamos. Sou muito grata!"</p>
-          <cite>— Geise, beneficiária</cite>
-        </blockquote>
-        <blockquote>
-          <p>"Conseguimos um lugar melhor para morar, muito obrigada!"</p>
-          <cite>— Kátia, beneficiária</cite>
-        </blockquote>
-        <blockquote>
-          <p>"Participar como voluntário me fez perceber a força da solidariedade."</p>
-          <cite>— João, estudante UNIP</cite>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Doação -->
-  <section id="doacao" class="section section-doacao">
-    <div class="container">
-      <h2>Faça sua Doação</h2>
-      <p>Sua doação ajuda diretamente famílias e comunidades em situação de vulnerabilidade.</p>
-      <form id="doacao-form">
-        <label for="valor">Valor da doação (R$):</label>
-        <input type="number" id="valor" name="valor" min="5" required placeholder="Ex: 50">
-        <button type="submit" class="btn-primary">Doar Agora</button>
-      </form>
-      <p class="info-pagamento">Aceitamos Pix, cartão de crédito e boleto.</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section section-faq">
-    <div class="container">
-      <h2>Perguntas Frequentes</h2>
-      <details>
-        <summary>Como posso ter certeza de que minha doação chegou?</summary>
-        <p>Você recebe um e-mail de confirmação com os dados do repasse às ONGs.</p>
-      </details>
-      <details>
-        <summary>Posso doar itens físicos?</summary>
-        <p>Sim, entre em contato pelo e-mail <a href="mailto:contato@unipsolidaria.org">contato@unipsolidaria.org</a>.</p>
-      </details>
-      <details>
-        <summary>As doações têm desconto no Imposto de Renda?</summary>
-        <p>Sim, emitimos recibos para fins de dedução fiscal quando aplicável.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>&copy; 2025 UNIP Solidária – Projeto de Extensão Acadêmica</p>
-  </footer>
-
-  <script src="script.js"></script>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
